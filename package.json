@@ -20,7 +20,12 @@
   },
   "homepage": "https://github.com/Phel-deLunari/SwEn_Cour01_LT10#readme",
   "dependencies": {
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
     "@types/stripe": "^8.0.416",
-    "stripe": "^18.1.1"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "stripe": "^18.1.1",
+    "zustand": "^5.0.5"
   }
 }
