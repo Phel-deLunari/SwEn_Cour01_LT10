@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/Phel-deLunari/SwEn_Cour01_LT10/issues"
   },
-  "homepage": "https://github.com/Phel-deLunari/SwEn_Cour01_LT10#readme"
+  "homepage": "https://github.com/Phel-deLunari/SwEn_Cour01_LT10#readme",
+  "dependencies": {
+    "@types/stripe": "^8.0.416",
+    "stripe": "^18.1.1"
+  }
 }
