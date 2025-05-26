@@ -46,4 +46,4 @@ Dự án phục vụ mục đích học tập và ứng dụng thực tế kỹ 
 ## 👤 Tác giả
 - Email_tv1: 23010416@st.phenikaa-uni.edu.vn
 - Email_tv2: 23010120@st.phenikaa-uni.edu.vn
-- Email_tv3:
+- Email_tv3: 23010171@st.phenikaa-uni.edu.vn
