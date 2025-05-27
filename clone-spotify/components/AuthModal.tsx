@@ -33,31 +33,22 @@ const AuthModal = () => {
     }
   }
 
+  if (!isOpen) return null;
+
   return (
-    <Modal 
-      title="Welcome back" 
-      description="Login to your account." 
-      isOpen={isOpen} 
-      onChange={onChange} 
-    >
-      <Auth
-        supabaseClient={supabaseClient}
-        providers={['github']}
-        magicLink={true}
-        appearance={{
-          theme: ThemeSupa,
-          variables: {
-            default: {
-              colors: {
-                brand: '#404040',
-                brandAccent: '#22c55e'
-              }
-            }
-          }
-        }}
-        theme="dark"
-      />
-    </Modal>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
+      <div className="bg-neutral-900 rounded-lg p-8 w-full max-w-md shadow-lg relative">
+        <button className="absolute top-4 right-4 text-neutral-400" onClick={onClose}>✕</button>
+        <Auth
+          supabaseClient={supabaseClient}
+          appearance={{ theme: ThemeSupa }}
+          providers={["github"]}
+          theme="dark"
+          showLinks={true}
+          magicLink={true}
+        />
+      </div>
+    </div>
   );
 }
 

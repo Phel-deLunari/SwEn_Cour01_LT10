@@ -11,58 +11,35 @@ export default async function Home() {
   const songs = await getSongs();
   const playlist = await getPlaylistByUserId();
 
- 
-
   return (
-    <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
+    <div className="bg-gradient-to-br from-neutral-900 via-black to-neutral-800 rounded-2xl h-full w-full overflow-hidden overflow-y-auto p-10 min-h-screen shadow-2xl">
       <Header className="">
-        <div className="mb-2">
-          <h1
-            className="
-          text-white
-          text-3xl
-          font-semibold    
-        "
-          >
-            Welcome Back !!
-          </h1>
-
-          <div
-            className="
-          grid
-          grid-cols-1
-          sm:grid-cols-2
-          xl:grid-cols-3
-          2xl:grid-cols-4
-          gap-3
-          mt-4
-        "
-          >
+        <div className="mb-14">
+          <h1 className="text-white text-6xl font-extrabold mb-8 drop-shadow-2xl tracking-tight leading-tight">Welcome Back !!</h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 mt-6">
             <ListItem
               name="Liked Songs"
               href="liked"
               image="/images/liked.png"
               data=""
             />
-
             {playlist.map((item: any) => (
               <ListItem
                 key={item.id}
                 name={item.Name}
                 href={`playlist/${item.Name}`}
                 image="N/A"
-                data = {item}
+                data={item}
               />
             ))}
           </div>
         </div>
       </Header>
-
-      <div className="mt-2 mb-7 px-6">
-        <div className="flex justify-between items-center">
-          <h1 className="text-white text-2xl font-semibold">Newest Songs</h1>
+      <div className="mt-14 mb-14 px-10">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-white text-4xl font-bold tracking-tight">Newest Songs</h1>
         </div>
-        <div>
+        <div className="rounded-2xl bg-neutral-900/90 p-8 shadow-2xl border border-neutral-800">
           <PageContent songs={songs} />
         </div>
       </div>
