@@ -38,7 +38,7 @@ const PlayListAccess = async ({ params }: { params: { title: string } }) => {
               gap-x-5
             "
           >
-            <Thumbnail playlist={playList}/>
+            {playList && <Thumbnail playlist={playList}/>}
           
              <HeaderContent title={title as string} playList={playList} loggedInUserPlaylist={loggedInUserPlaylist}/>
           </div>

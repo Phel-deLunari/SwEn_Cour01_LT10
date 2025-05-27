@@ -2,16 +2,14 @@ import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 import { PlayList } from "@/types";
 
-const useLoadThumbnail = (list: PlayList | any) => {
+const useLoadThumbnail = (playlist: PlayList | any) => {
   const supabaseClient = useSupabaseClient();
 
-  if (!list) {
-    return null;
-  }
+  if (!playlist || !playlist.thumbnail_path) return null;
 
   const { data: imageData } = supabaseClient.storage
     .from("playlist_thumbnail")
-    .getPublicUrl(list.thumbnail_path);
+    .getPublicUrl(playlist.thumbnail_path);
 
   return imageData.publicUrl;
 };

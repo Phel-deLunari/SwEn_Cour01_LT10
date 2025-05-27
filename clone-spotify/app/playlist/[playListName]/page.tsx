@@ -39,7 +39,7 @@ const PlayList = async ({ params }: { params: { playListName: string } }) => {
               gap-x-5
             "
           >
-            <Thumbnail playlist={playList}/>
+            {playList && <Thumbnail playlist={playList}/>}
           
              <HeaderContent title={params.playListName as string}/>
           </div>
