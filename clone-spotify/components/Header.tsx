@@ -74,7 +74,9 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
             "
             onClick={() => router.back()}
           >
-            <RxCaretLeft className="text-white" size={26} />
+            <span className="text-white">
+              <RxCaretLeft size={26} />
+            </span>
           </button>
           <button
             className="
@@ -88,32 +90,30 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
             "
             onClick={() => router.forward()}
           >
-            <RxCaretRight className="text-white" size={26} />
+            <span className="text-white">
+              <RxCaretRight size={26} />
+            </span>
           </button>
         </div>
 
         {/* For mobile view */}
         <div className="flex md:hidden gap-x-2 items-center">
           <button
-            className="
-            rounded-full 
-            p-2 
-            bg-white 
-          
-            flex 
-            items-center 
-            justify-center 
-            hover:opacity-75 
-            transition"
+            className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition"
+            onClick={() => router.push('/')}
           >
-            <HiHome onClick={() => router.push('/')}  className="text-black" size={20} />
+            <span className="text-black">
+              <HiHome size={20} />
+            </span>
           </button>
           <button
             className="rounded-full p-2 bg-white 
           flex items-center justify-center 
           hover:opacity-75 transition"
           >
-            <BiSearch className="text-black" size={20} />
+            <span className="text-black">
+              <BiSearch size={20} />
+            </span>
           </button>
         </div>
 

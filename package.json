@@ -1,32 +1,9 @@
 {
-  "name": "swen_cour01_lt10",
-  "version": "1.0.0",
-  "description": "Đây là một dự án **clone ứng dụng Spotify** với đầy đủ phần Frontend và Backend. Ứng dụng mô phỏng trải nghiệm nghe nhạc trực tuyến với các tính năng chính và giao diện tương tự Spotify.",
-  "main": "Header.js",
-  "scripts": {
-    "dev": "node Header.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Phel-deLunari/SwEn_Cour01_LT10.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/Phel-deLunari/SwEn_Cour01_LT10/issues"
-  },
-  "homepage": "https://github.com/Phel-deLunari/SwEn_Cour01_LT10#readme",
   "dependencies": {
+    "@supabase/auth-helpers-nextjs": "^0.10.0",
     "@supabase/auth-helpers-react": "^0.5.0",
-    "@types/react": "^19.1.5",
-    "@types/react-dom": "^19.1.5",
     "@types/stripe": "^8.0.416",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "stripe": "^18.1.1",
-    "zustand": "^5.0.5"
+    "react-icons": "^5.5.0",
+    "stripe": "^18.1.1"
   }
 }
