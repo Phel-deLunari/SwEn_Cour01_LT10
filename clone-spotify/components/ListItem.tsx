@@ -35,16 +35,19 @@ const ListItem: React.FC<ListItemProps> = ({ image, href, name, data }) => {
         rounded-2xl
         overflow-hidden
         gap-x-6
-        bg-neutral-800/90
-        hover:bg-emerald-800/80
+        bg-gradient-to-br from-neutral-800 to-neutral-900
+        hover:bg-emerald-700/80
         transition
-        pr-6
-        py-4
+        pr-8
+        py-5
         shadow-xl
         border border-neutral-700
         hover:shadow-2xl
         focus:outline-none
         focus:ring-2 focus:ring-emerald-500
+        hover:scale-105
+        duration-200
+        cursor-pointer
       "
     >
       <div
@@ -56,11 +59,12 @@ const ListItem: React.FC<ListItemProps> = ({ image, href, name, data }) => {
           overflow-hidden
           shadow-lg
           border border-neutral-700
+          bg-gradient-to-tr from-emerald-700 to-emerald-400
         "
       >
         <Image className="object-cover" fill src={imagePath} alt="Image" />
       </div>
-      <span className="text-white font-bold text-lg truncate py-5 mr-4">
+      <span className="text-white font-extrabold text-xl truncate py-5 mr-4 drop-shadow-lg">
         {name}
       </span>
       <div

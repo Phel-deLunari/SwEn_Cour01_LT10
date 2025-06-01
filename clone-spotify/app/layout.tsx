@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
 import AuthModal from "@/components/AuthModal";
+import Sidebar from "@/components/Sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Spotify Clone",
-  description: "A beautiful Spotify clone built with Next.js and Supabase",
+  description: "Listen to music",
 };
 
 export default function RootLayout({

@@ -50,7 +50,7 @@ const getSongsByPlaylist = async (name: string): Promise<Song[]> => {
     return item.song_id
   });
 
-  return ([flattenedData, playListData] as any) || [];
+  return [flattenedData, playListData] as any;
 };
 
 export default getSongsByPlaylist;

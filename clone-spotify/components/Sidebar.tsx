@@ -48,9 +48,11 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
     "
       >
         <Box>
-          <div className="flex flex-col gap-y-4 px-5 py-4">
+          <div 
+          className="flex flex-col gap-y-4 px-5 py-4">
             {routes.map((route) => (
-              <SidebarItem key={route.label} {...route} />
+              <SidebarItem
+               key={route.label} {...route} />
             ))}
           </div>
         </Box>

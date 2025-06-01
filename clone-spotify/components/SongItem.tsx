@@ -52,14 +52,19 @@ const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
         flex-col 
         items-center 
         justify-center 
-        rounded-md 
+        rounded-xl 
         overflow-hidden 
         gap-x-4 
-        bg-neutral-400/5 
+        bg-gradient-to-br from-neutral-800 to-neutral-900 
         cursor-pointer 
-        hover:bg-neutral-400/10 
+        hover:bg-emerald-800/30 
         transition 
-        p-3
+        p-4
+        shadow-lg
+        border border-neutral-700
+        hover:shadow-2xl
+        hover:scale-105
+        duration-200
       "
     >
       <div
@@ -68,8 +73,11 @@ const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
           aspect-square 
           w-full
           h-full 
-          rounded-md 
+          rounded-xl 
           overflow-hidden
+          shadow-md
+          border border-neutral-700
+          bg-gradient-to-tr from-emerald-700 to-emerald-400
         "
       >
         <Image
@@ -81,12 +89,12 @@ const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
         />
       </div>
       <div className="flex flex-col items-start w-full pt-4 gap-y-1">
-        <p className="font-semibold truncate w-full">{data.title}</p>
+        <p className="font-bold text-white truncate w-full drop-shadow-lg text-lg">{data.title}</p>
         <p
           className="
             text-neutral-400 
             text-sm 
-            pb-4 
+            pb-2 
             w-full 
             truncate
           "
@@ -95,24 +103,25 @@ const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
         </p>
         <p
           className="
-            text-neutral-350 
+            text-emerald-300 
             text-xs
             pb-2 
             w-full 
             truncate
+            font-semibold
           "
         >
           {`(${data.geners})`}
         </p>
-
         <Link href={`/song/${data.id}`}>
           <div
             className="
-            text-neutral-350 
-            text-xs
-            pb-2 
-            w-full 
-          "
+              text-emerald-400 
+              text-xs
+              pb-2 
+              w-full 
+              underline underline-offset-2 hover:text-emerald-200 transition
+            "
           >
             See Lyrics
           </div>
@@ -138,21 +147,21 @@ const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
         <button
           onClick={() => addSongstoPlaylist(data)}
           className="
-        transition 
-        opacity-0 
-        rounded-full 
-        flex 
-        items-center 
-        justify-center 
-        bg-neutral-500 
-        p-4 
-        drop-shadow-md 
-        translate
-        translate-y-1/4
-        group-hover:opacity-100 
-        group-hover:translate-y-0
-        hover:scale-110
-      "
+            transition 
+            opacity-0 
+            rounded-full 
+            flex 
+            items-center 
+            justify-center 
+            bg-emerald-500 
+            p-4 
+            drop-shadow-md 
+            translate
+            translate-y-1/4
+            group-hover:opacity-100 
+            group-hover:translate-y-0
+            hover:scale-110
+          "
         >
           <MdOutlinePlaylistAdd className="text-black" />
         </button>

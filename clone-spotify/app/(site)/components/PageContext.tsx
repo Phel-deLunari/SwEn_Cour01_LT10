@@ -36,7 +36,7 @@ const PageContent: React.FC<PageContentProps> = ({
         lg:grid-cols-4 
         xl:grid-cols-5 
         2xl:grid-cols-8 
-        gap-4 
+        gap-6 
         mt-4
       "
     >
