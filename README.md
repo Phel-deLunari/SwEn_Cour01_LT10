@@ -44,6 +44,6 @@ Dự án phục vụ mục đích học tập và ứng dụng thực tế kỹ 
 - 📱 Tối ưu trải nghiệm trên mobile và các trình duyệt khác nhau  
 
 ## 👤 Tác giả
--Email_tv1: 23010416@st.phenikaa-uni.edu.vn
--Email_tv2:
--Email_tv3:
+- Email_tv1: 23010416@st.phenikaa-uni.edu.vn
+- Email_tv2:
+- Email_tv3:
