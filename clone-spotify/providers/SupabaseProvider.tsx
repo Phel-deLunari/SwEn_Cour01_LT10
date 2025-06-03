@@ -7,6 +7,12 @@ import { create } from "domain";
 import { Session } from "inspector/promises";
 import { useState } from "react";
 
+const supabaseClient = createClientComponentClient({
+    supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+    supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+});
+
+
 interface SupabaseProviderProps {
     children: React.ReactNode;
 }
