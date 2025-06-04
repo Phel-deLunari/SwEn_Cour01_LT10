@@ -12,5 +12,5 @@ const useLoadImage = (song: Song) => {
         .from('images')
         .getPublicUrl(song.image_path);
     return imageData.publicUrl;
-}
+};
 export default useLoadImage;

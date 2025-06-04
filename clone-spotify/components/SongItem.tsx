@@ -42,6 +42,12 @@ const SongItem: React.FC<SongItemProps> = ({
             overflow-hidden
             "
         >
+            <Image
+            className ="object-cover"
+            src ={imagePath || '/images/liked.png'}
+            fill
+            alt="Image"
+             />
             </div> 
           <div className="flex flex-col items-center w-full p-4 gap-y-1">
             <p className="font-semibold truncate w-full">
