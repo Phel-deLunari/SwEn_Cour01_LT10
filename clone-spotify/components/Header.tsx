@@ -177,7 +177,7 @@ const Header: React.FC <HeaderProps> = ({
               </div>
               </>
             )}
-          ">
+          
             <>
             <div>
               <Button onClick={ authModal.onOpen} 
