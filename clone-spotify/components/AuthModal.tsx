@@ -9,6 +9,7 @@ import Modal from "./Modal";
 import useAuthModal from "@/hooks/useAuthModal";
 
 const AuthModal = () => {
+
   const supabaseClient = useSupabaseClient();
   const router = useRouter();
   const { session } = useSessionContext();
@@ -21,6 +22,24 @@ const AuthModal = () => {
     }
   }, [session, router, onClose]);
 
+    const supabaseClient = useSupabaseClient();
+    const router = useRouter();
+    const{session} = useSessionContext();
+    const{onClose,isOpen} = useAuthModal();
+    useEffect(() => {
+      if (session) {
+        router.refresh();
+        onClose();
+      }
+    }, [session, router, onClose]);
+  
+    }, []);
+    const onChange = (open:boolean) => {
+        if (!open) {
+            onClose();
+        }
+
+
   const onChange = (open: boolean) => {
     if (!open) {
       onClose(); // fixed typo from "onclose"
@@ -29,6 +48,7 @@ const AuthModal = () => {
 
   return (
     <Modal
+
       title="Welcome back"
       description="Login to your account"
       isOpen={isOpen}
@@ -51,6 +71,32 @@ const AuthModal = () => {
           },
         }}
       />
+
+
+        title="welcome back"
+        description="Login to your account"
+        isOpen={isOpen}
+        onChange={onChange}
+        onChange={() => {}}
+            >
+              <Auth
+              theme="dark"
+              magicLink
+                providers={["github", "google"]}
+                supabaseClient={supabaseClient}
+                appearance={{
+                    theme: ThemeSupa,
+                    variables: {
+                        default: {
+                            colors: {
+                                brand: "#404040",
+                                brandAccent: "#22c55e",
+                            },
+                        },
+                    },
+                }}
+              />
+
     </Modal>
   );
 };
