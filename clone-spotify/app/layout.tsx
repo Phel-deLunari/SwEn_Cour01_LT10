@@ -5,6 +5,7 @@ import Sidebar from '@/components/Sidebar'
 import SupabaseProvider from '@/providers/SupabaseProvider'
 import UserProvider from '@/providers/UserProvider'
 import ModalProvider from "@/providers/ModalProvider";
+import ToasterProvider from "@/providers/ToasterProvider";
 
 const FigtreeSans = Figtree({
   variable: "--font-Figtree-sans",
@@ -26,14 +27,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${FigtreeSans.variable} antialiased`}>
-      <SupabaseProvider>
-        <UserProvider>
-          <ModalProvider />
-        <Sidebar>
-        {children}
-      </Sidebar>
-      </UserProvider>
-      </SupabaseProvider>
+        <ToasterProvider/>
+        <SupabaseProvider>
+          <UserProvider>
+            <ModalProvider/>
+            <Sidebar>
+              {children}
+            </Sidebar>
+          </UserProvider>
+        </SupabaseProvider>
       </body>
     </html>
   );

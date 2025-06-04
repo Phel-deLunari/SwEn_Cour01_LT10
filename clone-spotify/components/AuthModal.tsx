@@ -18,6 +18,8 @@ const AuthModal = () => {
         router.refresh();
         onClose();
       }
+    }, [session, router, onClose]);
+  
     }, []);
     const onChange = (open:boolean) => {
         if (!open) {
@@ -31,6 +33,7 @@ const AuthModal = () => {
         title="welcome back"
         description="Login to your account"
         isOpen={isOpen}
+        onChange={onChange}
         onChange={() => {}}
             >
               <Auth
