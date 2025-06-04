@@ -58,9 +58,9 @@ export default async function Home() {
           Newest songs
         </h1>
       </div>
-      <PageContent/>
-     </div>
+      <PageContent songs={songs}/>
       </div>
+    </div>
      )
     }
 

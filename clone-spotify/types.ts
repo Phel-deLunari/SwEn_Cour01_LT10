@@ -7,7 +7,7 @@ export interface Song{
   author: string;
   image_path: string;
   song_path: string;
-}
+}                                      
 
 export interface UserDetails {
   id: string;
