@@ -1,19 +1,20 @@
 "use client";
-import { use } from "react";
 import Modal from "./Modal";
 import useUploadModal from "@/hooks/useUploadModal";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { title } from "process";
 import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import toast from "react-hot-toast";
 import { useUser } from "@/hooks/useUser";
 
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+
 const UpLoadModal = () => {
     const [isLoading, setIsLoading] = useState(false);
     const uploadModel = useUploadModal();
     const { user } = useUser();
+    const supabaseClient = useSupabaseClient();
 
     const {
       register,
@@ -42,9 +43,9 @@ const UpLoadModal = () => {
         const imageFile = values.image?.[0];
         const songFile = values.song?.[0];
 
-        if (!imageFile || !songFile) {
-          toast.error("Please select both an image and a song file.");
-          return;
+        if (!imageFile || !songFile || !user) {
+          toast.error("Missing fields!");
+          return;   
         }
 
       } catch (error) {
