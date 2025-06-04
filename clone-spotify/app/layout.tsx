@@ -6,6 +6,8 @@ import SupabaseProvider from '@/providers/SupabaseProvider'
 import UserProvider from '@/providers/UserProvider'
 import ModalProvider from "@/providers/ModalProvider";
 import ToasterProvider from "@/providers/ToasterProvider";
+import { get } from "http";
+import getSongsByUserId from "@/actions/getSongsByUser";
 
 const FigtreeSans = Figtree({
   variable: "--font-Figtree-sans",
@@ -18,12 +20,15 @@ export const metadata: Metadata = {
   title: "spotify",
   description: "listen to your favorite music",
 };
+export const revalidate = 0; // Disable caching for this layout
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const userSong = await getSongsByUserId();
+
   return (
     <html lang="en">
       <body className={`${FigtreeSans.variable} antialiased`}>
@@ -31,7 +36,7 @@ export default function RootLayout({
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider/>
-            <Sidebar>
+            <Sidebar songs={userSong}>
               {children}
             </Sidebar>
           </UserProvider>
