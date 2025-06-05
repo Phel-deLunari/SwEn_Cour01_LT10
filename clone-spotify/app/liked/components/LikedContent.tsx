@@ -5,6 +5,7 @@ import { Song } from "@/types";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import MediaItem from "@/components/MediaItem";
+import LikeButton from "@/components/LikeButton";
 
 interface LikedContentProps {
     songs: Song[];
@@ -50,7 +51,7 @@ const LikeContent: React.FC<LikedContentProps> = ({
                             data={song}
                         />
                     </div>
-
+                    <LikeButton songId={song.id}/>
                 </div>
             ))}
         </div>
