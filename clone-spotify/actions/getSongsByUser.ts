@@ -1,36 +1,22 @@
-import { Song } from '@/types';
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
+import { Song } from "@/types";
+import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 
-export const getSongsByUserId = async (): Promise<Song[]> => {
-  const supabase = createServerComponentClient({
-    cookies: cookies,
-  });
-
-  const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
-
-  if (sessionError) {
-    console.log(sessionError.message);
-    return [];
-  }
-
-  // Validate user ID before using in query
-  const userId = sessionData.session?.user.id;
-  if (!userId) {
-    // console.log('User not authenticated or missing ID');
-    return [];
-  }
+const getSongsByUserId = async (): Promise<Song[]> => {
+  const cookieStore = cookies(); // Lấy cookies từ Next.js headers
+  const supabase = createServerComponentClient({ cookies: () => cookieStore }); // Truyền cookie đúng cách
 
   const { data, error } = await supabase
-    .from('songs')
-    .select('*')
-    .eq('user_id', userId)
-    .order('created_at', { ascending: false });
+    .from("songs")
+    .select("*")
+    .order("created_at", { ascending: false });
 
   if (error) {
-    console.log(error.message);
+    console.error("Error fetching songs:", error.message);
     return [];
   }
-  return (data as any) || [];
+
+  return data as Song[]; // Trả về mảng bài hát
 };
+
 export default getSongsByUserId;
