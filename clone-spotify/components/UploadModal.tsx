@@ -45,7 +45,7 @@ const UpLoadModal = () => {
         const imageFile = values.image?.[0];
         const songFile = values.song?.[0];
 
-        if (!imageFile || !songFile) {
+        if (!imageFile || !songFile || !user) {
           toast.error("Please select both an image and a song file.");
           return;
         }
@@ -102,6 +102,7 @@ const UpLoadModal = () => {
         router.refresh();
         setIsLoading(false);
         toast.success("Song created!");
+        reset();
         uploadModel.onClose();
 
       } catch (error) {

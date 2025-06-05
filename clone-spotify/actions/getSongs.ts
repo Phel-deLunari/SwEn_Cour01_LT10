@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 
 const getSongs = async (): Promise<Song[]> => {
     const supabase = createServerComponentClient({
-        cookies, // ✅ Truyền trực tiếp hàm cookies — Next.js sẽ tự await
+        cookies: cookies, // ✅ Truyền trực tiếp hàm cookies — Next.js sẽ tự await
     });
 
     const { data, error } = await supabase

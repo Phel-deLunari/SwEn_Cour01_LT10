@@ -4,7 +4,16 @@ import { TbPlaylist } from "react-icons/tb";
 import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
 import useUploadModal from "@/hooks/useUploadModal";
-const Library = () => {
+import { Song } from "@/types";
+import MediaItem from "./MediaItem";
+
+interface LibraryProps {
+    songs: Song[];
+}
+
+const Library: React.FC<LibraryProps>= ({
+    songs
+}) => {
     const authModal = useAuthModal();
     const upLoadModal = useUploadModal();
     const {user}= useUser();
@@ -62,7 +71,13 @@ const Library = () => {
             px-3
             py-4
             ">
-                List to Song!
+             {songs.map((item) =>(
+                <MediaItem
+                    onClick={() => {}}
+                    key={item.id}
+                    data={item}
+                />
+             ))}
             </div>
         </div>
     );

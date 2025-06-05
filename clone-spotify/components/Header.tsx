@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({
                         <RxCaretLeft className="text-white " size={35} />
                     </button>
                     <button
-                        onClick={() => router.forward()}
+                        onClick={  () => router.forward()}
                         className="
                         rounded-full
                         bg-black
@@ -142,7 +142,7 @@ const Header: React.FC<HeaderProps> = ({
                             </Button>
                             <Button
                                 onClick={() => router.push('/account')}
-                                className=""
+                                className="bg-white"
                             >
                                 <FaUser />
                             </Button>
