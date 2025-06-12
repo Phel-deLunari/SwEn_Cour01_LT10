@@ -1,5 +1,6 @@
 "use client";
 
+import { Box } from "@mui/material";
 import {BounceLoader} from "react-spinners"
 
 const Loading = () => {
